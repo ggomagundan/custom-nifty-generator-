@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <tr>
+      <th>Name</th>
+  </tr>
+  <% for base in @bases %>
+    <tr>
+        <td><%= base.name %></td>
+        <td><%= link_to "Show", [:admin, base] %></td>
+      <td>
+          <%= link_to "Edit", edit_admin_base_path(base), class: "btn btn-warning" %>
+          <%= link_to "Destroy", [:admin, base], data: {confirm: 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+  <p><%= link_to "New Admin/Base", new_admin_base_path, class: "btn btn-primary" %></p>
